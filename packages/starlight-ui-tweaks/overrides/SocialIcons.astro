@@ -1,0 +1,58 @@
+---
+import Default from "@astrojs/starlight/components/SocialIcons.astro";
+
+const customLinks = [
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<div class="social-icons-extended">
+  <div class="custom-links">
+    {
+      customLinks.map((link) => (
+        <a href={link.href} class="custom-link">
+          {link.label}
+        </a>
+      ))
+    }
+  </div>
+  <Default />
+</div>
+
+<style>
+  .social-icons-extended {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .custom-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .custom-link {
+    color: var(--sl-color-text-accent);
+    text-decoration: none;
+    font-size: var(--sl-text-sm);
+    font-weight: 500;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .custom-link:hover {
+    opacity: 0.66;
+  }
+
+  .custom-links::after {
+    content: "";
+    width: 1px;
+    height: 2rem;
+    background: var(--sl-color-gray-5);
+    margin-left: 0.5rem;
+  }
+</style>

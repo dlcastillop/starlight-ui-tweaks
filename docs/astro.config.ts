@@ -9,6 +9,7 @@ export default defineConfig({
       title: "Starlight Page Actions",
       logo: {
         src: "./src/assets/logo.svg",
+        replacesTitle: true,
       },
       sidebar: [
         {
