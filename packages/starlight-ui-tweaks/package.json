@@ -1,0 +1,33 @@
+{
+  "name": "starlight-ui-tweaks",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "A Starlight plugin that adds page action buttons to your documentation.",
+  "author": {
+    "name": "Daniel Castillo",
+    "email": "daniel@dlcastillop.com",
+    "url": "https://dlcastillop.com"
+  },
+  "homepage": "https://starlight-ui-tweaks.dlcastillop.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlcastillop/starlight-ui-tweaks.git",
+    "directory": "packages/starlight-ui-tweaks"
+  },
+  "bugs": "https://github.com/dlcastillop/starlight-ui-tweaks/issues",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./overrides/PageTitle.astro": "./overrides/PageTitle.astro"
+  },
+  "devDependencies": {
+    "@astrojs/starlight": "^0.36.1",
+    "astro": "^5.15.1"
+  },
+  "peerDependencies": {
+    "@astrojs/starlight": ">=0.36"
+  },
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  }
+}
