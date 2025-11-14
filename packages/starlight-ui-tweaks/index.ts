@@ -87,6 +87,8 @@ export default function starlightUiTweaks(
           components: {
             ThemeSelect: "starlight-ui-tweaks/overrides/ThemeSelect.astro",
             SocialIcons: "starlight-ui-tweaks/overrides/SocialIcons.astro",
+            TableOfContents:
+              "starlight-ui-tweaks/overrides/TableOfContents.astro",
             ...starlightConfig.components,
           },
         });
