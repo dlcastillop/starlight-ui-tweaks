@@ -43,6 +43,11 @@ export interface UiTweaksConfig {
 export default function starlightUiTweaks(
   userConfig?: UiTweaksConfig
 ): StarlightPlugin {
+  const config = {
+    navbarLinks: [],
+    ...userConfig,
+  };
+
   return {
     name: "starlight-ui-tweaks",
     hooks: {
@@ -67,7 +72,7 @@ export default function starlightUiTweaks(
                       },
                       load(id) {
                         if (id === "\0virtual:starlight-ui-tweaks/config") {
-                          return `export default ${JSON.stringify(userConfig)}`;
+                          return `export default ${JSON.stringify(config)}`;
                         }
                       },
                     },
