@@ -1,45 +1,42 @@
 ---
 import Default from "@astrojs/starlight/components/TableOfContents.astro";
+import config from "virtual:starlight-ui-tweaks/config";
 
-const ctaConfig = {
-  image: "./src/assets/logo.svg",
-  title: "This is the title",
-  description: "This is the descriptions",
-  buttonText: "Get 50% off",
-  buttonHref: "https://your-link.com",
-};
+const ad = config.ad;
 ---
 
 <div class="toc-wrapper">
   <Default />
 
-  <div class="toc-cta">
-    <div class="cta-content">
-      <div class="cta-header">
-        <img
-          src={ctaConfig.image}
-          alt="Logo"
-          class="cta-logo"
-          width={64}
-          height={64}
-        />
-        <h2 class="cta-title">{ctaConfig.title}</h2>
+  {
+    ad && (
+      <div class="toc-cta">
+        <div class="cta-content">
+          <div class="cta-header">
+            <img
+              src={ad.image}
+              alt="Logo"
+              class="cta-logo"
+              width={80}
+              height={80}
+            />
+            <h2 class="cta-title">{ad.title}</h2>
+          </div>
+
+          <p class="cta-description">{ad.description}</p>
+
+          <a
+            href={ad.buttonHref}
+            class="cta-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {ad.buttonLabel}
+          </a>
+        </div>
       </div>
-
-      <p class="cta-description">
-        {ctaConfig.description}
-      </p>
-
-      <a
-        href={ctaConfig.buttonHref}
-        class="cta-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {ctaConfig.buttonText}
-      </a>
-    </div>
-  </div>
+    )
+  }
 </div>
 
 <style>
@@ -69,12 +66,10 @@ const ctaConfig = {
   }
 
   .cta-logo {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
-    background: white;
     padding: 0.5rem;
-    object-fit: contain;
   }
 
   .cta-title {

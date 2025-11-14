@@ -5,6 +5,13 @@ export interface UiTweaksConfig {
     label: string;
     href: string;
   }[];
+  ad?: {
+    image: string;
+    title: string;
+    description: string;
+    buttonLabel: string;
+    buttonHref: string;
+  };
 }
 
 /**
