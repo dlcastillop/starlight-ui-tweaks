@@ -2,12 +2,12 @@
 import Default from "@astrojs/starlight/components/SocialIcons.astro";
 import config from "virtual:starlight-ui-tweaks/config";
 
-const navbarLinks = config.navbarLinks ? config.navbarLinks : [];
+const navbarLinks = config.navbarLinks;
 ---
 
 <div class="social-icons-extended">
   {
-    navbarLinks.length !== 0 && (
+    navbarLinks && navbarLinks.length !== 0 && (
       <div class="custom-links">
         {navbarLinks.map((link) => (
           <a href={link.href} class="custom-link">
