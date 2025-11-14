@@ -1,0 +1,107 @@
+---
+import Default from "@astrojs/starlight/components/TableOfContents.astro";
+import config from "virtual:starlight-ui-tweaks/config";
+
+const ad = config.ad;
+---
+
+<div class="toc-wrapper">
+  <Default />
+
+  {
+    ad && (
+      <div class="toc-cta">
+        <div class="cta-content">
+          <div class="cta-header">
+            <img
+              src={ad.image}
+              alt="Logo"
+              class="cta-logo"
+              width={80}
+              height={80}
+            />
+            <h2 class="cta-title">{ad.title}</h2>
+          </div>
+
+          <p class="cta-description">{ad.description}</p>
+
+          <a
+            href={ad.buttonHref}
+            class="cta-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {ad.buttonLabel}
+          </a>
+        </div>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .toc-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .toc-cta {
+    border: 1px solid var(--sl-color-text-accent);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--sl-color-gray-6);
+  }
+
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta-logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+
+  .cta-title {
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-h5);
+    margin-bottom: 0px;
+  }
+
+  .cta-description {
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-sm);
+    text-align: center;
+  }
+
+  .cta-button {
+    background: var(--sl-color-text-accent);
+    color: var(--sl-color-black);
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    text-align: center;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    font-size: var(--sl-text-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+</style>

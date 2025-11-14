@@ -19,7 +19,8 @@
   "exports": {
     ".": "./index.ts",
     "./overrides/ThemeSelect.astro": "./overrides/ThemeSelect.astro",
-    "./overrides/SocialIcons.astro": "./overrides/SocialIcons.astro"
+    "./overrides/SocialIcons.astro": "./overrides/SocialIcons.astro",
+    "./overrides/TableOfContents.astro": "./overrides/TableOfContents.astro"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.36.1",
