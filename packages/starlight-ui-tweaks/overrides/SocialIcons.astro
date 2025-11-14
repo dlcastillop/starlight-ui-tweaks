@@ -47,7 +47,7 @@ const navbarLinks = config.navbarLinks ? config.navbarLinks : [];
     opacity: 0.66;
   }
 
-  .custom-links::after {
+  .custom-links:has(~ :not(:empty))::after {
     content: "";
     width: 1px;
     height: 2rem;
