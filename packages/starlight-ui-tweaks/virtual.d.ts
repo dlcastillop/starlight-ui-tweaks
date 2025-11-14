@@ -1,10 +1,12 @@
 // env.d.ts
-declare module "virtual:starlight-page-actions/config" {
-  export interface PageActionsConfig {
-    prompt?: string;
-    baseUrl?: string;
+declare module "virtual:starlight-ui-tweaks/config" {
+  export interface UiTweaksConfig {
+    navbarLinks?: {
+      label: string;
+      href: string;
+    }[];
   }
 
-  const config: PageActionsConfig;
+  const config: UiTweaksConfig;
   export default config;
 }
