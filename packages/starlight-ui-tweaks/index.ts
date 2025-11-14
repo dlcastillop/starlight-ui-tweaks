@@ -1,8 +1,10 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
 
-export interface PageActionsConfig {
-  prompt?: string;
-  baseUrl?: string;
+export interface UiTweaksConfig {
+  navbarLinks?: {
+    label: string;
+    href: string;
+  }[];
 }
 
 /**
@@ -39,20 +41,47 @@ export interface PageActionsConfig {
  *
  */
 export default function starlightUiTweaks(
-  userConfig?: PageActionsConfig
+  userConfig?: UiTweaksConfig
 ): StarlightPlugin {
-  const config: PageActionsConfig = {
-    prompt: "Read {url}. I want to ask questions about it.",
-    ...userConfig,
-  };
-
   return {
     name: "starlight-ui-tweaks",
     hooks: {
-      "config:setup"({ updateConfig, config: starlightConfig }) {
+      "config:setup"({
+        addIntegration,
+        updateConfig,
+        config: starlightConfig,
+      }) {
+        addIntegration({
+          name: "starlight-ui-tweaks-integration",
+          hooks: {
+            "astro:config:setup": ({ updateConfig }) => {
+              updateConfig({
+                vite: {
+                  plugins: [
+                    {
+                      name: "starlight-ui-tweaks-config",
+                      resolveId(id) {
+                        if (id === "virtual:starlight-ui-tweaks/config") {
+                          return "\0" + id;
+                        }
+                      },
+                      load(id) {
+                        if (id === "\0virtual:starlight-ui-tweaks/config") {
+                          return `export default ${JSON.stringify(userConfig)}`;
+                        }
+                      },
+                    },
+                  ],
+                },
+              });
+            },
+          },
+        });
+
         updateConfig({
           components: {
             ThemeSelect: "starlight-ui-tweaks/overrides/ThemeSelect.astro",
+            SocialIcons: "starlight-ui-tweaks/overrides/SocialIcons.astro",
             ...starlightConfig.components,
           },
         });
