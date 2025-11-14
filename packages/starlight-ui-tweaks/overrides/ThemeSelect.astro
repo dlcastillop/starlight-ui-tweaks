@@ -1,0 +1,102 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<button type="button" aria-label="Toggle theme" class="theme-toggle">
+  <Icon name="sun" size="1rem" class="light-icon" />
+  <Icon name="moon" size="1rem" class="dark-icon" />
+</button>
+
+<style>
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-gray-1);
+    transition: color 0.2s ease;
+  }
+
+  :root[data-theme="light"] .dark-icon,
+  :root[data-theme="dark"] .light-icon {
+    display: none;
+  }
+
+  :root[data-theme="light"] .light-icon,
+  :root[data-theme="dark"] .dark-icon {
+    display: block;
+  }
+</style>
+
+<script>
+  type Theme = "auto" | "dark" | "light";
+
+  /** Key in `localStorage` to store color theme preference at. */
+  const storageKey = "starlight-theme";
+
+  /** Get a typesafe theme string from any JS value (unknown values are coerced to `'auto'`). */
+  const parseTheme = (theme: unknown): Theme =>
+    theme === "auto" || theme === "dark" || theme === "light" ? theme : "auto";
+
+  /** Load the user's preference from `localStorage`. */
+  const loadTheme = (): Theme =>
+    parseTheme(
+      typeof localStorage !== "undefined" && localStorage.getItem(storageKey)
+    );
+
+  /** Store the user's preference in `localStorage`. */
+  const storeTheme = (theme: Theme): void => {
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(
+        storageKey,
+        theme === "light" || theme === "dark" ? theme : ""
+      );
+    }
+  };
+
+  /** Get the preferred system color scheme. */
+  const getPreferredColorScheme = (): Theme =>
+    matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+
+  /** Get the current theme considering auto mode */
+  const getCurrentTheme = (): Theme => {
+    const theme = loadTheme();
+    return theme === "auto" ? getPreferredColorScheme() : theme;
+  };
+
+  /** Update document theme and local storage state. */
+  const onThemeChange = (theme: Theme): void => {
+    document.documentElement.dataset.theme =
+      theme === "auto" ? getPreferredColorScheme() : theme;
+    storeTheme(theme);
+  };
+
+  /** Toggle between light and dark themes */
+  const toggleTheme = (): void => {
+    const currentTheme = getCurrentTheme();
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    onThemeChange(newTheme);
+  };
+
+  /** Set up all theme toggle buttons */
+  const setupThemeToggles = (): void => {
+    const buttons = document.querySelectorAll(".theme-toggle");
+    buttons.forEach((button) => {
+      button.addEventListener("click", toggleTheme);
+    });
+  };
+
+  // Initialize on page load
+  setupThemeToggles();
+  onThemeChange(loadTheme());
+
+  // Re-initialize after Starlight navigation (view transitions)
+  document.addEventListener("astro:page-load", () => {
+    setupThemeToggles();
+    onThemeChange(loadTheme());
+  });
+
+  // React to changes in system color scheme when in auto mode
+  matchMedia(`(prefers-color-scheme: light)`).addEventListener("change", () => {
+    if (loadTheme() === "auto") onThemeChange("auto");
+  });
+</script>

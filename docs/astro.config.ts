@@ -1,5 +1,6 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   site: "https://starlight-page-actions.dlcastillop.com",
@@ -63,6 +64,7 @@ export default defineConfig({
           label: "Threads account",
         },
       ],
+      plugins: [starlightUiTweaks()],
     }),
   ],
 });

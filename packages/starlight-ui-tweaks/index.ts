@@ -38,7 +38,7 @@ export interface PageActionsConfig {
  * ```
  *
  */
-export default function starlightPageActions(
+export default function starlightUiTweaks(
   userConfig?: PageActionsConfig
 ): StarlightPlugin {
   const config: PageActionsConfig = {
@@ -47,12 +47,12 @@ export default function starlightPageActions(
   };
 
   return {
-    name: "starlight-page-actions",
+    name: "starlight-ui-tweaks",
     hooks: {
       "config:setup"({ updateConfig, config: starlightConfig }) {
         updateConfig({
           components: {
-            PageTitle: "starlight-page-actions/overrides/PageTitle.astro",
+            ThemeSelect: "starlight-ui-tweaks/overrides/ThemeSelect.astro",
             ...starlightConfig.components,
           },
         });
