@@ -51,8 +51,7 @@ const navbarLinks = getLocaleConfig(config, currentLocale, "navbarLinks");
 
   .custom-links:has(~ :not(:empty))::after {
     content: "";
-    width: 1px;
     height: 2rem;
-    background: var(--sl-color-gray-5);
+    border-inline-end: 1px solid var(--sl-color-gray-5);
   }
 </style>
