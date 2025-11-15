@@ -1,16 +1,17 @@
 ---
 title: Getting Started
 description: Learn how to get started with Starlight Page Actions, a Starlight plugin that adds common page actions like copy Markdown, open docs in ChatGPT, and more.
-lastUpdated: 2025-10-30
+lastUpdated: 2025-11-15
 ---
 
 import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
 
-Starlight Page Actions is a Starlight plugin that adds page action buttons to your documentation like the ones you see above.
+Starlight UI Tweaks is a Starlight plugin that extends and customizes core UI components:
 
-- A "Copy Markdown" button to copy the raw markdown content
-- An "Open" dropdown menu with options to open the page in AI chat services (ChatGPT, Claude, etc.)
-- Automatic generation of the `llms.txt` file with all documentation URLs during build
+- Replaces the theme toggle with an icon-based selector
+- Adds navigation links to the navbar
+- Enables ads in the table of contents
+- Provides a customizable four-column footer
 
 ## Prerequisites
 
@@ -27,7 +28,7 @@ You will need to have a Starlight website set up. If you don't have one yet, you
    <TabItem label="npm">
 
    ```sh
-   npm install starlight-page-actions
+   npm install starlight-ui-tweaks
    ```
 
    </TabItem>
@@ -35,7 +36,7 @@ You will need to have a Starlight website set up. If you don't have one yet, you
    <TabItem label="yarn">
 
    ```sh
-   yarn add starlight-page-actions
+   yarn add starlight-ui-tweaks
    ```
 
    </TabItem>
@@ -43,7 +44,7 @@ You will need to have a Starlight website set up. If you don't have one yet, you
    <TabItem label="pnpm">
 
    ```sh
-   pnpm add starlight-page-actions
+   pnpm add starlight-ui-tweaks
    ```
 
    </TabItem>
@@ -56,12 +57,12 @@ You will need to have a Starlight website set up. If you don't have one yet, you
    // astro.config.mjs
    import starlight from '@astrojs/starlight'
    import { defineConfig } from 'astro/config'
-   +import starlightPageActions from 'starlight-page-actions'
+   +import starlightUiTweaks from 'starlight-ui-tweaks'
 
    export default defineConfig({
      integrations: [
        starlight({
-   +      plugins: [starlightPageActions()],
+   +      plugins: [starlightUiTweaks()],
          title: 'My Docs',
        }),
      ],
