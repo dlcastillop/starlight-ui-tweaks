@@ -1,0 +1,215 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+
+const { template } = (Astro.locals as any).starlightRoute.entry.data;
+const today = new Date();
+const year = today.getFullYear();
+---
+
+{
+  template === "doc" ? (
+    <Default />
+  ) : (
+    <footer>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <div class="footer-column">
+              <h3>Productos</h3>
+              <ul role="list">
+                <li>
+                  <a href="#">Características</a>
+                </li>
+                <li>
+                  <a href="#">Precios</a>
+                </li>
+                <li>
+                  <a href="#">API</a>
+                </li>
+                <li>
+                  <a href="#">Documentación</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column mt-10">
+              <h3>Empresa</h3>
+              <ul role="list">
+                <li>
+                  <a href="#">Acerca de</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+                <li>
+                  <a href="#">Carreras</a>
+                </li>
+                <li>
+                  <a href="#">Prensa</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-section">
+            <div class="footer-column">
+              <h3>Recursos</h3>
+              <ul role="list">
+                <li>
+                  <a href="#">Comunidad</a>
+                </li>
+                <li>
+                  <a href="#">Contacto</a>
+                </li>
+                <li>
+                  <a href="#">Soporte</a>
+                </li>
+                <li>
+                  <a href="#">Estado</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column mt-10">
+              <h3>Legal</h3>
+              <ul role="list">
+                <li>
+                  <a href="#">Privacidad</a>
+                </li>
+                <li>
+                  <a href="#">Términos</a>
+                </li>
+                <li>
+                  <a href="#">Cookies</a>
+                </li>
+                <li>
+                  <a href="#">Licencias</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; {year} Daniel Castillo. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+<style>
+  footer {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 42rem;
+    padding-bottom: 4rem;
+  }
+
+  .footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 2rem 1.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-column h3 {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .footer-column ul {
+    list-style: none;
+    margin-top: 1.5rem;
+    padding-left: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 1rem;
+  }
+
+  .footer-column ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer-column a {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-column a:hover {
+    opacity: 0.66;
+  }
+
+  .footer-bottom {
+    margin-top: 4rem;
+    border-top: 1px solid var(--sl-color-gray-6);
+    padding-top: 2rem;
+  }
+
+  .footer-bottom p {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--sl-color-gray-2);
+  }
+
+  @media (min-width: 768px) {
+    .footer-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-column.mt-10 {
+      margin-top: 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      margin-top: 0;
+      order: 1;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .footer-container {
+      padding-top: 6rem;
+    }
+
+    .footer-bottom {
+      margin-top: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    footer {
+      max-width: 80rem;
+    }
+
+    .footer-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 8rem;
+    }
+
+    .footer-bottom {
+      margin-top: 6rem;
+    }
+  }
+</style>

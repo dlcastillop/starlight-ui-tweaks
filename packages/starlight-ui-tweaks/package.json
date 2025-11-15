@@ -21,7 +21,8 @@
     "./overrides/ThemeSelect.astro": "./overrides/ThemeSelect.astro",
     "./overrides/SocialIcons.astro": "./overrides/SocialIcons.astro",
     "./overrides/TableOfContents.astro": "./overrides/TableOfContents.astro",
-    "./overrides/MarkdownContent.astro": "./overrides/MarkdownContent.astro"
+    "./overrides/MarkdownContent.astro": "./overrides/MarkdownContent.astro",
+    "./overrides/Footer.astro": "./overrides/Footer.astro"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.36.1",

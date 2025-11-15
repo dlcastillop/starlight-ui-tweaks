@@ -98,6 +98,7 @@ export default function starlightUiTweaks(
               "starlight-ui-tweaks/overrides/TableOfContents.astro",
             MarkdownContent:
               "starlight-ui-tweaks/overrides/MarkdownContent.astro",
+            Footer: "starlight-ui-tweaks/overrides/Footer.astro",
             ...starlightConfig.components,
           },
         });
