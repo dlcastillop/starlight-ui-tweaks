@@ -15,8 +15,10 @@ const ad = config.ad;
           width={64}
           height={64}
         />
-        <h2 class="cta-title">{ad.title}</h2>
-        <p class="cta-description">{ad.description}</p>
+        <div class="cta-text">
+          <h2 class="cta-title">{ad.title}</h2>
+          <p class="cta-description">{ad.description}</p>
+        </div>
         <a
           href={ad.buttonHref}
           class="cta-button"
@@ -52,6 +54,13 @@ const ad = config.ad;
     border-radius: 50%;
   }
 
+  .cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
   .cta-title {
     color: var(--sl-color-white);
     font-size: var(--sl-text-h5);
@@ -83,5 +92,67 @@ const ad = config.ad;
     box-shadow:
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 1151px) {
+    .cta-content {
+      flex-direction: row;
+      text-align: left;
+      gap: 0.75rem;
+    }
+
+    .cta-text {
+      gap: 0.25rem;
+    }
+
+    .cta-button {
+      min-width: fit-content;
+    }
+  }
+
+  @media (max-width: 972px) {
+    .cta-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-text {
+      gap: 0.75rem;
+    }
+
+    .cta-button {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 799px) {
+    .cta-content {
+      flex-direction: row;
+      text-align: left;
+      gap: 0.75rem;
+    }
+
+    .cta-text {
+      gap: 0.25rem;
+    }
+
+    .cta-button {
+      min-width: fit-content;
+    }
+  }
+
+  @media (max-width: 672px) {
+    .cta-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-text {
+      gap: 0.75rem;
+    }
+
+    .cta-button {
+      min-width: 100%;
+    }
   }
 </style>
