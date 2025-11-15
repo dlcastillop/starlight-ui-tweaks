@@ -10,62 +10,41 @@ interface Column {
   links: Link[];
 }
 
-export interface UiTweaksConfig {
-  navbarLinks?: Link[];
-  ad?: {
-    image: string;
-    title: string;
-    description: string;
-    buttonLabel: string;
-    buttonHref: string;
-  };
-  footer?: {
-    copyright: string;
-    firstColumn: Column;
-    secondColumn: Column;
-    thirdColumn: Column;
-    fourthColumn: Column;
-  };
+interface Ad {
+  image: string;
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonHref: string;
 }
 
-/**
- * Starlight plugin that adds page action buttons to your documentation.
- *
- * This plugin adds:
- * - A "Copy Markdown" button to copy the raw markdown content
- * - An "Open" dropdown menu with options to open the page in AI chat services (ChatGPT, Claude, etc.)
- * - Automatic generation of the `llms.txt` file with all documentation URLs during build
- *
- * @param {PageActionsConfig} [userConfig] - Configuration options for the plugin.
- * @param {string} [userConfig.prompt] - The prompt template for AI chat services. Use `{url}` as placeholder for the markdown URL.
- * @param {string} [userConfig.baseUrl] - The base URL of your site, required for generating the `llms.txt` file.
- *
- * @example
- * ```javascript
- * // astro.config.mjs
- * import starlight from '@astrojs/starlight';
- * import starlightPageActions from 'starlight-page-actions';
- *
- * export default defineConfig({
- *   integrations: [
- *     starlight({
- *       plugins: [
- *         starlightPageActions({
- *           prompt: "Read {url} and explain its main points briefly.",
- *           baseUrl: "https://mydocs.example.com"
- *         })
- *       ]
- *     })
- *   ]
- * });
- * ```
- *
- */
+interface Footer {
+  copyright: string;
+  firstColumn: Column;
+  secondColumn: Column;
+  thirdColumn: Column;
+  fourthColumn: Column;
+}
+
+interface LocaleConfig {
+  navbarLinks?: Link[];
+  ad?: Ad;
+  footer?: Footer;
+}
+
+export interface UiTweaksConfig {
+  navbarLinks?: Link[];
+  ad?: Ad;
+  footer?: Footer;
+  locales?: Record<string, LocaleConfig>;
+}
+
 export default function starlightUiTweaks(
   userConfig?: UiTweaksConfig
 ): StarlightPlugin {
   const config = {
     navbarLinks: [],
+    locales: {},
     ...userConfig,
   };
 
