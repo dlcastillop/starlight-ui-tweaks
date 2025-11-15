@@ -1,16 +1,30 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
 
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface Column {
+  title: string;
+  links: Link[];
+}
+
 export interface UiTweaksConfig {
-  navbarLinks?: {
-    label: string;
-    href: string;
-  }[];
+  navbarLinks?: Link[];
   ad?: {
     image: string;
     title: string;
     description: string;
     buttonLabel: string;
     buttonHref: string;
+  };
+  footer?: {
+    copyright: string;
+    firstColumn: Column;
+    secondColumn: Column;
+    thirdColumn: Column;
+    fourthColumn: Column;
   };
 }
 
@@ -98,6 +112,7 @@ export default function starlightUiTweaks(
               "starlight-ui-tweaks/overrides/TableOfContents.astro",
             MarkdownContent:
               "starlight-ui-tweaks/overrides/MarkdownContent.astro",
+            Footer: "starlight-ui-tweaks/overrides/Footer.astro",
             ...starlightConfig.components,
           },
         });
