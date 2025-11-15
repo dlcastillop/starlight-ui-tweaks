@@ -1,11 +1,12 @@
 ---
 import config from "virtual:starlight-ui-tweaks/config";
+const { template } = (Astro.locals as any).starlightRoute.entry.data;
 
 const ad = config.ad;
 ---
 
 {
-  ad && (
+  ad && template === "doc" && (
     <div class="toc-cta">
       <div class="cta-content">
         <img
