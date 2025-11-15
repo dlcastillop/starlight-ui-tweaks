@@ -13,13 +13,12 @@ import Default from "@astrojs/starlight/components/MarkdownContent.astro";
 
 <style>
   .mobile-ad {
-    display: none;
-    margin-top: 2rem;
+    display: block;
   }
 
-  @media (max-width: 1151px) {
+  @media (min-width: 1152px) {
     .mobile-ad {
-      display: block;
+      display: none;
     }
   }
 </style>
