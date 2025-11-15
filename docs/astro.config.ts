@@ -1,12 +1,13 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 import starlightUiTweaks from "starlight-ui-tweaks";
+import starlightPageActions from "starlight-page-actions";
 
 export default defineConfig({
-  site: "https://starlight-page-actions.dlcastillop.com",
+  site: "https://starlight-ui-tweaks.dlcastillop.com",
   integrations: [
     starlight({
-      title: "Starlight Page Actions",
+      title: "Starlight UI Tweaks",
       logo: {
         src: "./src/assets/logo.svg",
         replacesTitle: true,
@@ -50,8 +51,13 @@ export default defineConfig({
       ],
       social: [
         {
+          icon: "email",
+          href: "mailto:daniel@dlcastillop.com",
+          label: "Email",
+        },
+        {
           icon: "github",
-          href: "https://github.com/dlcastillop/starlight-page-actions",
+          href: "https://github.com/dlcastillop/starlight-ui-tweaks",
           label: "Github repo",
         },
         {
@@ -65,7 +71,80 @@ export default defineConfig({
           label: "Threads account",
         },
       ],
-      plugins: [starlightUiTweaks()],
+      plugins: [
+        starlightUiTweaks({
+          footer: {
+            copyright: "Daniel Castillo. All rights reserved.",
+            firstColumn: {
+              title: "Developer Tools",
+              links: [
+                {
+                  label: "SEO in Next.js",
+                  href: "https://seo-in-nextjs.dlcastillop.com/",
+                },
+                {
+                  label: "SEO in Astro",
+                  href: "https://seo-in-astro.dlcastillop.com/",
+                },
+                {
+                  label: "Nova.js",
+                  href: "https://novajs.dev/",
+                },
+                {
+                  label: "Starlight Page Actions",
+                  href: "https://starlight-page-actions.dlcastillop.com/",
+                },
+                {
+                  label: "Hook Crafter",
+                  href: "https://hookcrafter.dev/",
+                },
+              ],
+            },
+            secondColumn: {
+              title: "Resources",
+              links: [
+                {
+                  label: "Guides",
+                  href: "/guides",
+                },
+                {
+                  label: "References",
+                  href: "/references",
+                },
+              ],
+            },
+            thirdColumn: {
+              title: "Support",
+              links: [
+                {
+                  label: "Issues",
+                  href: "https://github.com/dlcastillop/starlight-ui-tweaks/issues",
+                },
+                {
+                  label: "Discussions",
+                  href: "https://github.com/dlcastillop/starlight-ui-tweaks/discussions",
+                },
+              ],
+            },
+            fourthColumn: {
+              title: "More",
+              links: [
+                {
+                  label: "Contact",
+                  href: "mailto:daniel@dlcastillop.com",
+                },
+                {
+                  label: "Changelog",
+                  href: "/docs/changelog",
+                },
+              ],
+            },
+          },
+        }),
+        starlightPageActions({
+          baseUrl: "https://starlight-ui-tweaks.dlcastillop.com",
+        }),
+      ],
     }),
   ],
 });
