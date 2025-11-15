@@ -96,6 +96,8 @@ export default function starlightUiTweaks(
             SocialIcons: "starlight-ui-tweaks/overrides/SocialIcons.astro",
             TableOfContents:
               "starlight-ui-tweaks/overrides/TableOfContents.astro",
+            MarkdownContent:
+              "starlight-ui-tweaks/overrides/MarkdownContent.astro",
             ...starlightConfig.components,
           },
         });

@@ -1,0 +1,25 @@
+---
+import Ad from "../components/Ad.astro";
+import Default from "@astrojs/starlight/components/MarkdownContent.astro";
+---
+
+<Default>
+  <slot />
+</Default>
+
+<div class="mobile-ad">
+  <Ad />
+</div>
+
+<style>
+  .mobile-ad {
+    display: none;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 1151px) {
+    .mobile-ad {
+      display: block;
+    }
+  }
+</style>
