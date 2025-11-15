@@ -1,16 +1,30 @@
 // env.d.ts
 declare module "virtual:starlight-ui-tweaks/config" {
+  interface Link {
+    label: string;
+    href: string;
+  }
+
+  interface Column {
+    title: string;
+    links: Link[];
+  }
+
   export interface UiTweaksConfig {
-    navbarLinks?: {
-      label: string;
-      href: string;
-    }[];
+    navbarLinks?: Link[];
     ad?: {
       image: string;
       title: string;
       description: string;
       buttonLabel: string;
       buttonHref: string;
+    };
+    footer?: {
+      copyright: string;
+      firstColumn: Column;
+      secondColumn: Column;
+      thirdColumn: Column;
+      fourthColumn: Column;
     };
   }
 

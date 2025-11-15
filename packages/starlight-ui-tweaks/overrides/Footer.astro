@@ -1,13 +1,15 @@
 ---
 import Default from "@astrojs/starlight/components/Footer.astro";
+import config from "virtual:starlight-ui-tweaks/config";
 
 const { template } = (Astro.locals as any).starlightRoute.entry.data;
+const { footer } = config;
 const today = new Date();
 const year = today.getFullYear();
 ---
 
 {
-  template === "doc" ? (
+  template === "doc" || !footer ? (
     <Default />
   ) : (
     <footer>
@@ -15,79 +17,59 @@ const year = today.getFullYear();
         <div class="footer-grid">
           <div class="footer-section">
             <div class="footer-column">
-              <h3>Productos</h3>
+              <h3>{footer.firstColumn.title}</h3>
               <ul role="list">
-                <li>
-                  <a href="#">Características</a>
-                </li>
-                <li>
-                  <a href="#">Precios</a>
-                </li>
-                <li>
-                  <a href="#">API</a>
-                </li>
-                <li>
-                  <a href="#">Documentación</a>
-                </li>
+                {footer.firstColumn.links.map((link) => {
+                  return (
+                    <li>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div class="footer-column mt-10">
-              <h3>Empresa</h3>
+              <h3>{footer.secondColumn.title}</h3>
               <ul role="list">
-                <li>
-                  <a href="#">Acerca de</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
-                </li>
-                <li>
-                  <a href="#">Carreras</a>
-                </li>
-                <li>
-                  <a href="#">Prensa</a>
-                </li>
+                {footer.secondColumn.links.map((link) => {
+                  return (
+                    <li>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
           <div class="footer-section">
             <div class="footer-column">
-              <h3>Recursos</h3>
+              <h3>{footer.thirdColumn.title}</h3>
               <ul role="list">
-                <li>
-                  <a href="#">Comunidad</a>
-                </li>
-                <li>
-                  <a href="#">Contacto</a>
-                </li>
-                <li>
-                  <a href="#">Soporte</a>
-                </li>
-                <li>
-                  <a href="#">Estado</a>
-                </li>
+                {footer.thirdColumn.links.map((link) => {
+                  return (
+                    <li>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div class="footer-column mt-10">
-              <h3>Legal</h3>
+              <h3>{footer.fourthColumn.title}</h3>
               <ul role="list">
-                <li>
-                  <a href="#">Privacidad</a>
-                </li>
-                <li>
-                  <a href="#">Términos</a>
-                </li>
-                <li>
-                  <a href="#">Cookies</a>
-                </li>
-                <li>
-                  <a href="#">Licencias</a>
-                </li>
+                {footer.fourthColumn.links.map((link) => {
+                  return (
+                    <li>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; {year} Daniel Castillo. All rights reserved.</p>
+          <p>&copy; {`${year} ${footer.copyright}`}</p>
         </div>
       </div>
     </footer>
