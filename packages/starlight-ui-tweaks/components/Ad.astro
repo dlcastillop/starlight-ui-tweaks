@@ -1,8 +1,10 @@
 ---
 import config from "virtual:starlight-ui-tweaks/config";
-const { template } = (Astro.locals as any).starlightRoute.entry.data;
+import { getLocaleConfig } from "../utils/getLocaleConfig";
 
-const ad = config.ad;
+const currentLocale = Astro.currentLocale;
+const ad = getLocaleConfig(config, currentLocale, "ad");
+const { template } = (Astro.locals as any).starlightRoute.entry.data;
 ---
 
 {

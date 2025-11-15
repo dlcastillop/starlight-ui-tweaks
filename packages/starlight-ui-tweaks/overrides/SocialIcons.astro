@@ -1,8 +1,10 @@
 ---
 import Default from "@astrojs/starlight/components/SocialIcons.astro";
 import config from "virtual:starlight-ui-tweaks/config";
+import { getLocaleConfig } from "../utils/getLocaleConfig";
 
-const navbarLinks = config.navbarLinks;
+const currentLocale = Astro.currentLocale;
+const navbarLinks = getLocaleConfig(config, currentLocale, "navbarLinks");
 ---
 
 <div class="social-icons-extended">
