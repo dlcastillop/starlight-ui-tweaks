@@ -54,6 +54,10 @@ export default defineConfig({
               label: "Configuration Reference",
               link: "docs/reference/configuration",
             },
+            {
+              label: "Types Reference",
+              link: "docs/reference/types",
+            },
           ],
         },
       ],

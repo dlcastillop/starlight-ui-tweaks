@@ -10,14 +10,9 @@ Starlight UI Tweaks exposes several options to customize your documentation site
 
 ### `navbarLinks`
 
-**type:** `Link[]`
+**type:** [`Link[]`](/docs/reference/types#link)
 
 Add custom navigation links to the navbar.
-
-Properties:
-
-- `label` (`string`, **required**): The text displayed for the link
-- `href` (`string`, **required**): The URL the announcement links to
 
 ```js
 import starlight from "@astrojs/starlight";
@@ -44,17 +39,9 @@ export default defineConfig({
 
 ### `ad`
 
-**type:** `Ad`
+**type:** [`Ad`](/docs/reference/types#ad)
 
 Display promotional content below the table of contents on desktop, or at the end of page content on mobile.
-
-Properties:
-
-- `image` (`string`, **required**): Path to the ad image
-- `title` (`string`, **required**): The ad headline
-- `description` (`string`, **required**): Supporting text for the ad
-- `buttonLabel` (`string`, **required**): Text displayed on the call-to-action button
-- `buttonHref`(`string`, **required**): URL the button links to
 
 ```js
 import starlight from "@astrojs/starlight";
@@ -83,22 +70,9 @@ export default defineConfig({
 
 ### `footer`
 
-**type:** `Footer`
+**type:** [`Footer`](/docs/reference/types#footer)
 
 Add a marketing-style footer with four columns to pages using the splash template.
-
-Properties:
-
-- `copyright` (`string`, **required**): Copyright text displayed at the bottom
-- `firstColumn` (`Column`, **required**): Configuration for the first footer column
-- `secondColumn` (`Column`, **required**): Configuration for the second footer column
-- `thirdColumn` (`Column`, **required**): Configuration for the third footer column
-- `fourthColumn` (`Column`, **required**): Configuration for the fourth footer column
-
-`Column` properties:
-
-- `title` (`string`, **required**): The column title
-- `links` (`Link[]`, **required**): An array of links in the column
 
 ```js
 import starlight from "@astrojs/starlight";
@@ -151,7 +125,7 @@ export default defineConfig({
 
 ### `locales`
 
-**type:** `Record<string, LocaleConfig>`
+**type:** [`Record<string, LocaleConfig>`](/docs/reference/types#localeconfig)
 
 Provide translations for UI Tweaks content in different languages.
 
