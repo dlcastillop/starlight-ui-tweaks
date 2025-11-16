@@ -121,7 +121,7 @@ export default defineConfig({
                   href: "/docs/guides/adding-navigation-links",
                 },
                 {
-                  label: "References",
+                  label: "Reference",
                   href: "/docs/reference/configuration",
                 },
               ],
