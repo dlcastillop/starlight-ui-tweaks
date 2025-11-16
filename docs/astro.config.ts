@@ -41,6 +41,10 @@ export default defineConfig({
               label: "Adding a Footer",
               link: "docs/guides/adding-footer",
             },
+            {
+              label: "Internationalization",
+              link: "docs/guides/internationalization",
+            },
           ],
         },
         {
