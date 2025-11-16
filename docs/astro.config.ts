@@ -30,12 +30,8 @@ export default defineConfig({
           label: "Guides",
           items: [
             {
-              label: "Customize the Prompt",
-              link: "docs/customize-prompt",
-            },
-            {
-              label: "Generate the llms.txt file",
-              link: "docs/generate-llms-txt",
+              label: "Adding Navigation Links",
+              link: "docs/guides/adding-navigation-links",
             },
           ],
         },
@@ -105,7 +101,7 @@ export default defineConfig({
               links: [
                 {
                   label: "Guides",
-                  href: "/guides",
+                  href: "/docs/guides/adding-navigation-links",
                 },
                 {
                   label: "References",
