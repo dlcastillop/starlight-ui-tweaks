@@ -33,6 +33,10 @@ export default defineConfig({
               label: "Adding Navigation Links",
               link: "docs/guides/adding-navigation-links",
             },
+            {
+              label: "Showing an Ad",
+              link: "docs/guides/showing-ad",
+            },
           ],
         },
         {

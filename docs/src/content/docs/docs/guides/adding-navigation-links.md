@@ -1,6 +1,6 @@
 ---
 title: Adding Navigation Links
-description: Learn how to customize the prompt in Starlight Page Actions to provide better context.
+description: Learn how to add custom navigation links to the navbar in your Starlight documentation site.
 lastUpdated: 2025-11-16
 ---
 
