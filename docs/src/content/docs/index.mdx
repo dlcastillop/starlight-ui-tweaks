@@ -1,0 +1,120 @@
+---
+title: Customize Starlight beyond the defaults
+description: A Starlight plugin that extends core UI components with custom navigation links, ads, marketing footers, and a cleaner theme toggle.
+template: splash
+hero:
+  title: ""
+---
+
+import {
+  Hero,
+  Features,
+  Faq,
+  Cta,
+} from "@dlcastillop/starlight-marketing-components";
+import Navigation from "@lucide/astro/icons/navigation";
+import Moon from "@lucide/astro/icons/moon";
+import Megaphone from "@lucide/astro/icons/megaphone";
+import Link from "@lucide/astro/icons/link";
+
+<Hero
+  title={{
+    fistPart: "Customize Starlight",
+    highlightedPart: "beyond",
+    secondPart: "the defaults",
+  }}
+  description="A Starlight plugin that extends core UI components with custom navigation links, ads, marketing footers, and a cleaner theme toggle."
+  primaryCta={{
+    title: "Get Started",
+    href: "docs/getting-started",
+  }}
+  secondaryCta={{
+    title: "More developer tools",
+    href: "https://dlcastillop.lemonsqueezy.com",
+  }}
+/>
+
+<Features
+  highlightedTitle="What's Included"
+  title="Powerful UI enhancements for Starlight"
+  description="Add professional touches to your documentation site with features that work together to create a polished, marketing-ready experience."
+  features={[
+    {
+      name: "Enhanced Navbar",
+      description:
+        "Add custom links to your navbar for external resources, API references, or marketing pages.",
+      icon: Navigation,
+    },
+    {
+      name: "Cleaner Theme Selector",
+      description:
+        "Swap Starlight's text-based theme selector for a sleek icon that saves space and looks modern.",
+      icon: Moon,
+    },
+    {
+      name: "Monetize Your Documentation",
+      description:
+        "Promote products, services, or related tools without disrupting the reading flow.",
+      icon: Megaphone,
+    },
+    {
+      name: "Professional Site Footer",
+      description:
+        "Create a polished footer experience with multiple columns for product links, resources, support options, and company information.",
+      icon: Link,
+    },
+  ]}
+/>
+
+<Faq
+  faqs={[
+    {
+      question: "Does this work with all Starlight themes?",
+      answer:
+        "Yes, Starlight UI Tweaks is designed to work seamlessly with Starlight's default theme and most custom themes. The plugin extends core components without breaking existing functionality.",
+    },
+    {
+      question: "Will this affect my existing Starlight configuration?",
+      answer:
+        "No, the plugin only adds new features without modifying your existing Starlight setup. You can enable or disable features independently, and removing the plugin won't break your site.",
+    },
+    {
+      question: "Can I use only some features and not others?",
+      answer:
+        "Absolutely. Each feature is optional and independent. You can add navbar links without using the footer, or use the ad placement without changing the theme toggle. Configure only what you need.",
+    },
+    {
+      question: "Does the footer appear on all pages?",
+      answer:
+        "No, the marketing footer only appears on pages using Starlight's splash template. This is intentional—regular documentation pages keep their standard layout while landing pages get the full marketing treatment.",
+    },
+    {
+      question: "How does internationalization work?",
+      answer:
+        "All customizable content can be translated for different locales. Simply provide translations in the locales configuration object, matching the locale keys you've defined in Starlight. You only need to translate the features you're using.",
+    },
+    {
+      question: "Can I customize the styling of these components?",
+      answer:
+        "The components use Starlight's existing design tokens and styling, so they match your site automatically. For deeper customization, you can override styles using CSS, just like any other Starlight component.",
+    },
+    {
+      question: "Does this affect my site's performance?",
+      answer:
+        "No, the plugin is lightweight and only adds minimal overhead. Features are implemented efficiently and follow Starlight's performance best practices.",
+    },
+  ]}
+/>
+
+<Cta
+  title="Transform your Starlight site now"
+  description="Install Starlight UI Tweaks and customize your documentation site in minutes."
+  primaryCta={{
+    title: "Get Started",
+    href: "/docs/getting-started",
+  }}
+  secondaryCta={{
+    title: "More developer tools",
+    href: "https://dlcastillop.lemonsqueezy.com",
+  }}
+/>
