@@ -52,7 +52,7 @@ export default defineConfig({
           items: [
             {
               label: "Configuration Reference",
-              link: "docs/configuration-reference",
+              link: "docs/reference/configuration",
             },
           ],
         },
@@ -117,7 +117,7 @@ export default defineConfig({
                 },
                 {
                   label: "References",
-                  href: "/references",
+                  href: "/docs/reference/configuration",
                 },
               ],
             },
