@@ -2,6 +2,7 @@ import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 import starlightUiTweaks from "starlight-ui-tweaks";
 import starlightPageActions from "starlight-page-actions";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://starlight-ui-tweaks.dlcastillop.com",
@@ -157,6 +158,10 @@ export default defineConfig({
           baseUrl: "https://starlight-ui-tweaks.dlcastillop.com",
         }),
       ],
+      customCss: ["./src/styles/global.css"],
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
