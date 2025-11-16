@@ -37,6 +37,10 @@ export default defineConfig({
               label: "Showing an Ad",
               link: "docs/guides/showing-ad",
             },
+            {
+              label: "Adding a Footer",
+              link: "docs/guides/adding-footer",
+            },
           ],
         },
         {
