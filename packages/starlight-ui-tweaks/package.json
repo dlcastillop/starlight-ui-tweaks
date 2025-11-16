@@ -1,8 +1,8 @@
 {
   "name": "starlight-ui-tweaks",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
-  "description": "A Starlight plugin that adds page action buttons to your documentation.",
+  "description": "A Starlight plugin that extends core UI components.",
   "author": {
     "name": "Daniel Castillo",
     "email": "daniel@dlcastillop.com",
