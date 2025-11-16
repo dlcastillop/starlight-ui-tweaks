@@ -4,8 +4,6 @@ description: The full reference documentation for Starlight UI Tweaks plugin typ
 lastUpdated: 2025-11-16
 ---
 
-Starlight UI Tweaks exposes several options to customize your documentation site's UI components.
-
 ## Link
 
 Properties:
