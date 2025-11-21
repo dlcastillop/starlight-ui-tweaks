@@ -32,8 +32,8 @@ importers:
         specifier: ^0.34.4
         version: 0.34.4
       starlight-page-actions:
-        specifier: ^0.1.1
-        version: 0.1.1(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)
+        specifier: ^0.2.0
+        version: 0.2.0(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)
       starlight-ui-tweaks:
         specifier: workspace:*
         version: link:../packages/starlight-ui-tweaks
@@ -1760,8 +1760,8 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  starlight-page-actions@0.1.1:
-    resolution: {integrity: sha512-2n1+VsJxQV5ih3lZNIfLYS2Fs41CRIJ+0EmblMVv2qSxuo9sQK2OEjHWQ2sDlJ9EEHhftPmG8mpB/4I0U3cDsA==}
+  starlight-page-actions@0.2.0:
+    resolution: {integrity: sha512-ijVV7e/fVJETXxB7Q0jW5zABiLunKdH97jtmQkll6oi+3KisMXP1JFW1I3t9+CLIvFdHTTO6UwfsL7RpWyefNg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       '@astrojs/starlight': '>=0.36'
@@ -4307,7 +4307,7 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  starlight-page-actions@0.1.1(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2):
+  starlight-page-actions@0.2.0(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2):
     dependencies:
       '@astrojs/starlight': 0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3))
       vite: 6.4.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)
