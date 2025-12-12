@@ -2,3 +2,7 @@
   content: none;
   border: 0;
 }
+
+starlight-lang-select {
+  display: flex;
+}
