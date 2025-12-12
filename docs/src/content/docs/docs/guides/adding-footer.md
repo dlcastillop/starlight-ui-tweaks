@@ -13,13 +13,13 @@ Use the `footer` option inside the plugin configuration:
 ```js
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
     starlight({
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           footer: {
             copyright: "My Company. All rights reserved.",
             firstColumn: {
@@ -74,7 +74,7 @@ Footer content can be internationalized. See the [Internationalization guide](/d
 ```js
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
@@ -90,7 +90,7 @@ export default defineConfig({
         },
       },
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           footer: {
             copyright: "My Company. All rights reserved.",
             firstColumn: {

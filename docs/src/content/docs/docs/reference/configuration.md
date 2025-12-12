@@ -1,7 +1,7 @@
 ---
 title: Configuration Reference
 description: The full reference documentation for Starlight UI Tweaks plugin options.
-lastUpdated: 2025-11-16
+lastUpdated: 2025-12-12
 ---
 
 Starlight UI Tweaks exposes several options to customize your documentation site's UI components.
@@ -17,13 +17,13 @@ Add custom navigation links to the navbar.
 ```js
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
     starlight({
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           navbarLinks: [
             { label: "Documentation", href: "/docs" },
             { label: "API Reference", href: "/api" },
@@ -46,13 +46,13 @@ Display promotional content below the table of contents on desktop, or at the en
 ```js
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
     starlight({
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           ad: {
             image: "/ad-image.png",
             title: "Try Our New Product",
@@ -77,13 +77,13 @@ Add a marketing-style footer with four columns to pages using the splash templat
 ```js
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
     starlight({
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           footer: {
             copyright: "My Company. All rights reserved.",
             firstColumn: {
@@ -114,6 +114,7 @@ export default defineConfig({
                 { label: "Blog", href: "/blog" },
               ],
             },
+            showSocialIcons: true,
           },
         }),
       ],
@@ -134,7 +135,7 @@ Each locale key must match the locale keys defined in your Starlight configurati
 ```js
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
@@ -150,7 +151,7 @@ export default defineConfig({
         },
       },
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           navbarLinks: [{ label: "Documentation", href: "/docs" }],
           locales: {
             es: {

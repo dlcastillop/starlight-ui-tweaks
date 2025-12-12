@@ -1,7 +1,7 @@
 ---
 title: Types Reference
 description: The full reference documentation for Starlight UI Tweaks plugin types.
-lastUpdated: 2025-11-16
+lastUpdated: 2025-12-12
 ---
 
 ## Link
@@ -30,6 +30,7 @@ Properties:
 - `secondColumn` (`Column`, **required**): Configuration for the second footer column
 - `thirdColumn` (`Column`, **required**): Configuration for the third footer column
 - `fourthColumn` (`Column`, **required**): Configuration for the fourth footer column
+- `showSocialIcons` (`boolean`): If `true`, social icons will be displayed in the footer section and will not be shown in the navbar. Otherwise, they will be displayed in the navbar only.
 
 ## `Column`
 
