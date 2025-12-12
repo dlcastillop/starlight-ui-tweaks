@@ -1,3 +1,4 @@
 .social-icons:has(.social-icons-extended.social-icons-hidden)::after {
-  height: 0;
+  content: none;
+  border: 0;
 }

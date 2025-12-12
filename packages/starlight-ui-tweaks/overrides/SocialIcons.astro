@@ -57,4 +57,11 @@ const showSocialIcons = !config?.footer?.showSocialIcons;
     height: 2rem;
     border-inline-end: 1px solid var(--sl-color-gray-5);
   }
+
+  @media (width < 800px) {
+    .social-icons-hidden .custom-links::after {
+      content: none;
+      border: 0;
+    }
+  }
 </style>
