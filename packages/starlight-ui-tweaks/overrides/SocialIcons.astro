@@ -1,13 +1,16 @@
 ---
-import Default from "@astrojs/starlight/components/SocialIcons.astro";
+import DefaultSocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 import config from "virtual:starlight-ui-tweaks/config";
 import { getLocaleConfig } from "../utils/getLocaleConfig";
 
 const currentLocale = Astro.currentLocale;
 const navbarLinks = getLocaleConfig(config, currentLocale, "navbarLinks");
+const showSocialIcons = !config?.footer?.showSocialIcons;
 ---
 
-<div class="social-icons-extended">
+<div
+  class={`social-icons-extended ${showSocialIcons ? "" : "social-icons-hidden"}`}
+>
   {
     navbarLinks && navbarLinks.length !== 0 && (
       <div class="custom-links">
@@ -19,7 +22,7 @@ const navbarLinks = getLocaleConfig(config, currentLocale, "navbarLinks");
       </div>
     )
   }
-  <Default />
+  {showSocialIcons && <DefaultSocialIcons />}
 </div>
 
 <style>
@@ -49,7 +52,7 @@ const navbarLinks = getLocaleConfig(config, currentLocale, "navbarLinks");
     opacity: 0.66;
   }
 
-  .custom-links:has(~ :not(:empty))::after {
+  .custom-links::after {
     content: "";
     height: 2rem;
     border-inline-end: 1px solid var(--sl-color-gray-5);
