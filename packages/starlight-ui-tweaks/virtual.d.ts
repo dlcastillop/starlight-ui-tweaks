@@ -25,6 +25,7 @@ declare module "virtual:starlight-ui-tweaks/config" {
       secondColumn: Column;
       thirdColumn: Column;
       fourthColumn: Column;
+      showSocialIcons?: boolean;
     };
   }
 

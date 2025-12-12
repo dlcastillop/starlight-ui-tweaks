@@ -1,18 +1,20 @@
 ---
-import Default from "@astrojs/starlight/components/Footer.astro";
+import DefaultFooter from "@astrojs/starlight/components/Footer.astro";
 import config from "virtual:starlight-ui-tweaks/config";
 import { getLocaleConfig } from "../utils/getLocaleConfig";
+import DefaultSocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 
 const currentLocale = Astro.currentLocale;
 const footer = getLocaleConfig(config, currentLocale, "footer");
 const { template } = (Astro.locals as any).starlightRoute.entry.data;
 const today = new Date();
 const year = today.getFullYear();
+const showSocialIcons = footer?.showSocialIcons;
 ---
 
 {
   template === "doc" || !footer ? (
-    <Default />
+    <DefaultFooter />
   ) : (
     <footer>
       <div class="footer-container">
@@ -72,6 +74,11 @@ const year = today.getFullYear();
         </div>
         <div class="footer-bottom">
           <p>&copy; {`${year} ${footer.copyright}`}</p>
+          {showSocialIcons && (
+            <div class="footer-social-icons">
+              <DefaultSocialIcons />
+            </div>
+          )}
         </div>
       </div>
     </footer>
@@ -140,13 +147,23 @@ const year = today.getFullYear();
     margin-top: 4rem;
     border-top: 1px solid var(--sl-color-gray-6);
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .footer-bottom p {
-    margin-top: 2rem;
     font-size: 0.875rem;
     line-height: 1.5rem;
     color: var(--sl-color-gray-2);
+    order: 1;
   }
 
   @media (min-width: 768px) {
@@ -157,17 +174,6 @@ const year = today.getFullYear();
     .footer-column.mt-10 {
       margin-top: 0;
     }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-bottom p {
-      margin-top: 0;
-      order: 1;
-    }
   }
 
   @media (min-width: 640px) {
@@ -176,7 +182,14 @@ const year = today.getFullYear();
     }
 
     .footer-bottom {
-      margin-top: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .footer-bottom p {
+      order: 0;
     }
   }
 
@@ -189,10 +202,6 @@ const year = today.getFullYear();
       padding-left: 2rem;
       padding-right: 2rem;
       padding-top: 8rem;
-    }
-
-    .footer-bottom {
-      margin-top: 6rem;
     }
   }
 </style>
