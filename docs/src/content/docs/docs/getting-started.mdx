@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 description: Learn how to get started with Starlight UI Tweaks, a Starlight plugin that extends and customizes core UI components.
-lastUpdated: 2025-11-15
+lastUpdated: 2025-12-12
 ---
 
 import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
@@ -69,6 +69,14 @@ You will need to have a Starlight website set up. If you don't have one yet, you
    })
    ```
 
-3. Start the development server to preview the plugin in action.
+3. Add the following line to the `globals.css` file:
+
+   ```diff lang="css"
+   /* Rest of the content */
+   // src/styles/global.css
+   +@import "starlight-ui-tweaks/styles";
+   ```
+
+4. Start the development server to preview the plugin in action.
 
 </Steps>

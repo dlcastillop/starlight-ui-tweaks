@@ -21,7 +21,7 @@ First, configure your locales in Starlight:
 ```js
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightUITweaks from "starlight-ui-tweaks";
+import starlightUiTweaks from "starlight-ui-tweaks";
 
 export default defineConfig({
   integrations: [
@@ -41,7 +41,7 @@ export default defineConfig({
         },
       },
       plugins: [
-        starlightUITweaks({
+        starlightUiTweaks({
           // Default content (root locale)
           navbarLinks: [{ label: "Documentation", href: "/docs" }],
           // Translations
