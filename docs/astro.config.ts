@@ -107,10 +107,6 @@ export default defineConfig({
                   label: "Starlight Page Actions",
                   href: "https://starlight-page-actions.dlcastillop.com/",
                 },
-                {
-                  label: "Hook Crafter",
-                  href: "https://hookcrafter.dev/",
-                },
               ],
             },
             secondColumn: {
