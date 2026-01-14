@@ -32,8 +32,8 @@ importers:
         specifier: ^0.34.4
         version: 0.34.4
       starlight-page-actions:
-        specifier: ^0.3.0
-        version: 0.3.0(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)
+        specifier: ^0.4.0
+        version: 0.4.0(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3))(vite@6.4.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2))
       starlight-ui-tweaks:
         specifier: workspace:*
         version: link:../packages/starlight-ui-tweaks
@@ -1760,11 +1760,12 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  starlight-page-actions@0.3.0:
-    resolution: {integrity: sha512-GuwiqelI2GhD4lht7W4gBVRtaqgucmBBU11/4pMmgiXRfA1PjzeJT9SGnm/+zlM76NSOpF4Sk9w0g7gDIfiwuQ==}
+  starlight-page-actions@0.4.0:
+    resolution: {integrity: sha512-PJn6m1ERlwkI3coZKT1T2O0unZR9xbF++20ZHh+PdmAJmwVSIeXYTM9on7Hr8MnhCiYz0o1M7dWJo3G5c1mrWQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
-      '@astrojs/starlight': '>=0.36'
+      '@astrojs/starlight': '>=0.36.0'
+      astro: '>=5.6.0'
 
   stream-replace-string@2.0.0:
     resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
@@ -4307,23 +4308,13 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  starlight-page-actions@0.3.0(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2):
+  starlight-page-actions@0.4.0(@astrojs/starlight@0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)))(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3))(vite@6.4.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)):
     dependencies:
       '@astrojs/starlight': 0.36.1(astro@5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3))
-      vite: 6.4.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)
+      astro: 5.15.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)
       vite-plugin-static-copy: 3.1.4(vite@6.4.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2))
     transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - yaml
+      - vite
 
   stream-replace-string@2.0.0: {}
 
