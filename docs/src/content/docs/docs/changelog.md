@@ -1,10 +1,16 @@
 ---
 title: Changelog
 description: New features, bug fixes, and improvements made to Starlight UI Tweaks.
-lastUpdated: 2025-12-13
+lastUpdated: 2026-01-19
 ---
 
 New features, bug fixes, and improvements made to Starlight UI Tweaks.
+
+## v0.2.1
+
+### Bug Fixes
+
+- Fixed footer copyright year being stuck at build time, now updates dynamically on client side
 
 ## v0.2.0
 
