@@ -83,11 +83,17 @@ export default defineConfig({
           href: "https://threads.com/@dlcastillop",
           label: "Threads account",
         },
+        {
+          icon: "patreon",
+          href: "https://patreon.com/dlcastillop",
+          label: "Patreon account",
+        },
       ],
       plugins: [
         starlightUiTweaks({
           footer: {
             copyright: "Daniel Castillo. All rights reserved.",
+            showSocialIcons: true,
             firstColumn: {
               title: "Developer Tools",
               links: [
