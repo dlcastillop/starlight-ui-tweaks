@@ -7,8 +7,6 @@ import DefaultSocialIcons from "@astrojs/starlight/components/SocialIcons.astro"
 const currentLocale = Astro.currentLocale;
 const footer = getLocaleConfig(config, currentLocale, "footer");
 const { template } = (Astro.locals as any).starlightRoute.entry.data;
-const today = new Date();
-const year = today.getFullYear();
 const showSocialIcons = footer?.showSocialIcons;
 ---
 
@@ -73,7 +71,9 @@ const showSocialIcons = footer?.showSocialIcons;
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; {`${year} ${footer.copyright}`}</p>
+          <p>
+            &copy; <span id="footer-year" /> {` ${footer.copyright}`}
+          </p>
           {showSocialIcons && (
             <div class="footer-social-icons">
               <DefaultSocialIcons />
@@ -205,3 +205,9 @@ const showSocialIcons = footer?.showSocialIcons;
     }
   }
 </style>
+
+<script>
+  document.querySelector("#footer-year")!.textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
