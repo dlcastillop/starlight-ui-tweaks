@@ -44,6 +44,9 @@ importers:
       oxfmt:
         specifier: ^0.32.0
         version: 0.32.0
+      oxlint:
+        specifier: ^1.47.0
+        version: 1.47.0
 
   packages/starlight-ui-tweaks:
     dependencies:
