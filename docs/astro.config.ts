@@ -158,7 +158,7 @@ export default defineConfig({
         }),
         starlightPageActions({
           baseUrl: "https://starlight-ui-tweaks.dlcastillop.com",
-          share: true
+          share: true,
         }),
       ],
       customCss: ["./src/styles/global.css"],

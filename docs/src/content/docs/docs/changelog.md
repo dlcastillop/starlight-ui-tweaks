@@ -1,10 +1,16 @@
 ---
 title: Changelog
 description: New features, bug fixes, and improvements made to Starlight UI Tweaks.
-lastUpdated: 2026-01-19
+lastUpdated: 2026-02-13
 ---
 
 New features, bug fixes, and improvements made to Starlight UI Tweaks.
+
+## v0.2.2
+
+### Bug Fixes
+
+- Add null check to avoid console error when updating footer year
 
 ## v0.2.1
 
