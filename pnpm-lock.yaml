@@ -40,6 +40,10 @@ importers:
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
+    devDependencies:
+      oxfmt:
+        specifier: ^0.32.0
+        version: 0.32.0
 
   packages/starlight-ui-tweaks:
     dependencies:
