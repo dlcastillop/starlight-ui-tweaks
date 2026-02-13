@@ -14,6 +14,9 @@
     "url": "https://github.com/dlcastillop/starlight-ui-tweaks.git",
     "directory": "packages/starlight-ui-tweaks"
   },
+  "scripts": {
+    "lint": "oxlint"
+  },
   "bugs": "https://github.com/dlcastillop/starlight-ui-tweaks/issues",
   "type": "module",
   "exports": {
@@ -29,11 +32,11 @@
     "vite-plugin-virtual": "^0.5.0"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.36.1",
-    "astro": "^5.15.1"
+    "oxfmt": "^0.32.0"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.36"
+    "@astrojs/starlight": ">=0.36.0",
+    "astro": ">=5.6.0"
   },
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
