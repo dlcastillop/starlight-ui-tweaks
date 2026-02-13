@@ -78,8 +78,7 @@ export default defineConfig({
               ad: {
                 image: "/ad-image-es.png",
                 title: "Prueba Nuestro Nuevo Producto",
-                description:
-                  "Aumenta tu productividad con nuestra última herramienta.",
+                description: "Aumenta tu productividad con nuestra última herramienta.",
                 buttonLabel: "Saber Más",
                 buttonHref: "https://example.com/es/producto",
               },
