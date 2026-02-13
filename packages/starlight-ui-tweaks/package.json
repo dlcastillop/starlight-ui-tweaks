@@ -25,6 +25,9 @@
     "./overrides/Footer.astro": "./overrides/Footer.astro",
     "./styles": "./styles/base.css"
   },
+  "dependencies": {
+    "vite-plugin-virtual": "^0.5.0"
+  },
   "devDependencies": {
     "@astrojs/starlight": "^0.36.1",
     "astro": "^5.15.1"
