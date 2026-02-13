@@ -1,5 +1,5 @@
 // env.d.ts
-declare module "virtual:starlight-ui-tweaks/config" {
+declare module "virtual:starlight-ui-tweaks" {
   interface Link {
     label: string;
     href: string;

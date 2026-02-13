@@ -1,4 +1,5 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
+import virtual from "vite-plugin-virtual";
 
 interface Link {
   label: string;
@@ -119,9 +120,7 @@ export interface UiTweaksConfig {
  * });
  * ```
  */
-export default function starlightUiTweaks(
-  userConfig?: UiTweaksConfig
-): StarlightPlugin {
+export default function starlightUiTweaks(userConfig?: UiTweaksConfig): StarlightPlugin {
   const config = {
     navbarLinks: [],
     locales: {},
@@ -131,11 +130,7 @@ export default function starlightUiTweaks(
   return {
     name: "starlight-ui-tweaks",
     hooks: {
-      "config:setup"({
-        addIntegration,
-        updateConfig,
-        config: starlightConfig,
-      }) {
+      "config:setup"({ addIntegration, updateConfig, config: starlightConfig }) {
         addIntegration({
           name: "starlight-ui-tweaks-integration",
           hooks: {
@@ -143,19 +138,10 @@ export default function starlightUiTweaks(
               updateConfig({
                 vite: {
                   plugins: [
-                    {
-                      name: "starlight-ui-tweaks-config",
-                      resolveId(id) {
-                        if (id === "virtual:starlight-ui-tweaks/config") {
-                          return "\0" + id;
-                        }
-                      },
-                      load(id) {
-                        if (id === "\0virtual:starlight-ui-tweaks/config") {
-                          return `export default ${JSON.stringify(config)}`;
-                        }
-                      },
-                    },
+                    virtual({
+                      "virtual:module": `export default ${JSON.stringify(config)}`,
+                      "virtual:starlight-ui-tweaks": config,
+                    }),
                   ],
                 },
               });
@@ -167,10 +153,8 @@ export default function starlightUiTweaks(
           components: {
             ThemeSelect: "starlight-ui-tweaks/overrides/ThemeSelect.astro",
             SocialIcons: "starlight-ui-tweaks/overrides/SocialIcons.astro",
-            TableOfContents:
-              "starlight-ui-tweaks/overrides/TableOfContents.astro",
-            MarkdownContent:
-              "starlight-ui-tweaks/overrides/MarkdownContent.astro",
+            TableOfContents: "starlight-ui-tweaks/overrides/TableOfContents.astro",
+            MarkdownContent: "starlight-ui-tweaks/overrides/MarkdownContent.astro",
             Footer: "starlight-ui-tweaks/overrides/Footer.astro",
             ...starlightConfig.components,
           },
