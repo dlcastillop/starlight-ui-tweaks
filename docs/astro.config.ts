@@ -75,7 +75,7 @@ export default defineConfig({
         },
         {
           icon: "linkedin",
-          href: "https://linkedin.com/dlcastillop",
+          href: "https://linkedin.com/in/dlcastillop",
           label: "LinkedIn account",
         },
         {
@@ -158,6 +158,7 @@ export default defineConfig({
         }),
         starlightPageActions({
           baseUrl: "https://starlight-ui-tweaks.dlcastillop.com",
+          share: true
         }),
       ],
       customCss: ["./src/styles/global.css"],

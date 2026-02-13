@@ -207,7 +207,11 @@ const showSocialIcons = footer?.showSocialIcons;
 </style>
 
 <script>
-  document.querySelector("#footer-year")!.textContent = new Date()
-    .getFullYear()
-    .toString();
+  const footerYearElement = document.querySelector("#footer-year");
+
+  if (footerYearElement) {
+    footerYearElement.textContent = new Date()
+      .getFullYear()
+      .toString();
+  }
 </script>
