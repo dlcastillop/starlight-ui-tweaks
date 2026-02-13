@@ -1,23 +1,20 @@
 {
   "name": "starlight-ui-tweaks",
   "version": "0.2.1",
-  "license": "MIT",
   "description": "A Starlight plugin that extends core UI components.",
+  "homepage": "https://starlight-ui-tweaks.dlcastillop.com",
+  "bugs": "https://github.com/dlcastillop/starlight-ui-tweaks/issues",
+  "license": "MIT",
   "author": {
     "name": "Daniel Castillo",
     "email": "daniel@dlcastillop.com",
     "url": "https://dlcastillop.com"
   },
-  "homepage": "https://starlight-ui-tweaks.dlcastillop.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/dlcastillop/starlight-ui-tweaks.git",
     "directory": "packages/starlight-ui-tweaks"
   },
-  "scripts": {
-    "lint": "oxlint"
-  },
-  "bugs": "https://github.com/dlcastillop/starlight-ui-tweaks/issues",
   "type": "module",
   "exports": {
     ".": "./index.ts",
@@ -27,6 +24,9 @@
     "./overrides/MarkdownContent.astro": "./overrides/MarkdownContent.astro",
     "./overrides/Footer.astro": "./overrides/Footer.astro",
     "./styles": "./styles/base.css"
+  },
+  "scripts": {
+    "fmt": "oxfmt"
   },
   "dependencies": {
     "vite-plugin-virtual": "^0.5.0"
