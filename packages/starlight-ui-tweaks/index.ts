@@ -1,4 +1,5 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
+import virtual from "vite-plugin-virtual";
 
 interface Link {
   label: string;
@@ -143,19 +144,10 @@ export default function starlightUiTweaks(
               updateConfig({
                 vite: {
                   plugins: [
-                    {
-                      name: "starlight-ui-tweaks-config",
-                      resolveId(id) {
-                        if (id === "virtual:starlight-ui-tweaks/config") {
-                          return "\0" + id;
-                        }
-                      },
-                      load(id) {
-                        if (id === "\0virtual:starlight-ui-tweaks/config") {
-                          return `export default ${JSON.stringify(config)}`;
-                        }
-                      },
-                    },
+                    virtual({
+                      "virtual:module": `export default ${JSON.stringify(config)}`,
+                      "virtual:starlight-ui-tweaks": config,
+                    }),
                   ],
                 },
               });
