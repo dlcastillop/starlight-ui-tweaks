@@ -88,7 +88,6 @@ export default defineConfig({
         starlightUiTweaks({
           footer: {
             copyright: "Daniel Castillo. All rights reserved.",
-            showSocialIcons: true,
             firstColumn: {
               title: "Developer Tools",
               links: [
@@ -139,6 +138,10 @@ export default defineConfig({
             fourthColumn: {
               title: "More",
               links: [
+                {
+                  label: "Become a Sponsor",
+                  href: "https://ko-fi.com/dlcastillop/tiers",
+                },
                 {
                   label: "Contact",
                   href: "mailto:daniel@dlcastillop.com",
