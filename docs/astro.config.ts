@@ -104,6 +104,10 @@ export default defineConfig({
                   href: "https://novajs.dev/",
                 },
                 {
+                  label: "Skillit",
+                  href: "https://skillit.dlcastillop.com/",
+                },
+                {
                   label: "Starlight Page Actions",
                   href: "https://starlight-page-actions.dlcastillop.com/",
                 },
