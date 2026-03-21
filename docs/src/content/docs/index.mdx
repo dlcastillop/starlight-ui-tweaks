@@ -6,13 +6,24 @@ hero:
   title: ""
 ---
 
-import { Hero, Features, Faq, Cta } from "@dlcastillop/starlight-marketing-components";
+import {
+  Hero,
+  Features,
+  Faq,
+  Cta,
+} from "@dlcastillop/starlight-marketing-components";
 import Navigation from "@lucide/astro/icons/navigation";
 import Moon from "@lucide/astro/icons/moon";
 import Megaphone from "@lucide/astro/icons/megaphone";
 import Link from "@lucide/astro/icons/link";
 
 <Hero
+  announcement={{
+    title: "New",
+    ctaTitle:
+      "Skillit: turn your Starlight docs into AI skills with a single command",
+    href: "https://skillit.dlcastillop.com/",
+  }}
   title={{
     fistPart: "Customize Starlight",
     highlightedPart: "beyond",
