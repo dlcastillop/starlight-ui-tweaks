@@ -1,0 +1,59 @@
+---
+title: Getting Started
+description: Learn how to get started with Starlight UI Tweaks, a Starlight plugin that extends and customizes core UI components.
+---
+
+Starlight UI Tweaks is a Starlight plugin that extends and customizes core UI components:
+
+- Replaces the theme toggle with an icon-based selector
+- Adds navigation links to the navbar
+- Enables ads in the table of contents
+- Provides a customizable four-column footer
+
+## Prerequisites
+
+You will need to have a Starlight website set up. If you don't have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+
+## Installation
+
+1. Install it by running the following command in your terminal:
+
+   ```sh
+   npm install starlight-ui-tweaks
+   ```
+
+   ```sh
+   yarn add starlight-ui-tweaks
+   ```
+
+   ```sh
+   pnpm add starlight-ui-tweaks
+   ```
+
+2. Configure the plugin in your Starlight configuration in the `astro.config.mjs` file.
+
+   ```diff lang="js"
+   // astro.config.mjs
+   import starlight from '@astrojs/starlight'
+   import { defineConfig } from 'astro/config'
+   +import starlightUiTweaks from 'starlight-ui-tweaks'
+
+   export default defineConfig({
+     integrations: [
+       starlight({
+   +      plugins: [starlightUiTweaks()],
+         title: 'My Docs',
+       }),
+     ],
+   })
+   ```
+
+3. Add the following line to the `globals.css` file:
+
+   ```diff lang="css"
+   /* Rest of the content */
+   // src/styles/global.css
+   +@import "starlight-ui-tweaks/styles";
+   ```
+
+4. Start the development server to preview the plugin in action.
