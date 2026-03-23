@@ -1,0 +1,76 @@
+---
+title: Adding Navigation Links
+description: Learn how to add custom navigation links to the navbar in your Starlight documentation site.
+---
+
+You can add custom navigation links to the navbar.
+
+## How to add navigation links
+
+Use the `navbarLinks` option inside the plugin configuration:
+
+```js
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import starlightUiTweaks from "starlight-ui-tweaks";
+
+export default defineConfig({
+  integrations: [
+    starlight({
+      plugins: [
+        starlightUiTweaks({
+          navbarLinks: [
+            { label: "Documentation", href: "/docs" },
+            { label: "API Reference", href: "/api" },
+          ],
+        }),
+      ],
+      title: "My Docs",
+    }),
+  ],
+});
+```
+
+## Internationalization
+
+Navigation link labels can be internationalized. See the [Internationalization guide](internationalization.md) for more details.
+
+```js
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import starlightUiTweaks from "starlight-ui-tweaks";
+
+export default defineConfig({
+  integrations: [
+    starlight({
+      locales: {
+        root: {
+          label: "English",
+          lang: "en",
+        },
+        es: {
+          label: "Español",
+          lang: "es",
+        },
+      },
+      plugins: [
+        starlightUiTweaks({
+          navbarLinks: [
+            { label: "Documentation", href: "/docs" },
+            { label: "API Reference", href: "/api" },
+          ],
+          locales: {
+            es: {
+              navbarLinks: [
+                { label: "Documentación", href: "/docs" },
+                { label: "Referencia de la API", href: "/api" },
+              ],
+            },
+          },
+        }),
+      ],
+      title: "My Docs",
+    }),
+  ],
+});
+```
